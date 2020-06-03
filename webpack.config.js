@@ -37,9 +37,20 @@ function createRenderConfig(isDev) {
             "fs": "require('fs')"
         },
         module: {
+            loaders: [
+                {
+                    test: /\.(scss|sass)$/i,
+                    include: [
+                        path.resolve(__dirname, 'node_modules'),
+                    ],
+                    loaders: ["css", "sass"]
+                },
+            ]
+        },
+        module: {
             rules: [
                 {
-                    test: /\.scss$/,
+                    test: /\.(scss|sass)$/,
                     use: [
                         {
                             loader: MiniCssExtractPlugin.loader,
@@ -48,7 +59,8 @@ function createRenderConfig(isDev) {
                             }
                         },
                         "css-loader",
-                        "sass-loader"
+                        "sass-loader",
+                        "style-loader"
                     ]
                 },
                 {

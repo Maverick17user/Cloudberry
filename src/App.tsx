@@ -1,7 +1,7 @@
 import { hot } from "react-hot-loader/root";
 import * as React from "react";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
-import "./styles/main.scss";
+import "./styles/main.sass";
 
 import FinanceWiget from './views/FinanceWiget/FinanceWiget'
 
