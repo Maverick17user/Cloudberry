@@ -37,18 +37,17 @@ function createRenderConfig(isDev) {
             "fs": "require('fs')"
         },
         module: {
-            loaders: [
-                {
-                    test: /\.(scss|sass)$/i,
-                    include: [
-                        path.resolve(__dirname, 'node_modules'),
-                    ],
-                    loaders: ["css", "sass"]
-                },
-            ]
-        },
-        module: {
             rules: [
+                {
+                    test: /\.(eot|svg|ttf|woff|woff2)(\?.*)/,
+                    loader: 'file-loader',
+                    include: path.join(__dirname, './src/styles/'),
+                    options: {
+                        limit: 10000,
+                        name: '[name].[ext]?[hash]',
+                        outputPath: 'styles/',
+                    }
+                },
                 {
                     test: /\.(scss|sass)$/,
                     use: [
@@ -60,7 +59,6 @@ function createRenderConfig(isDev) {
                         },
                         "css-loader",
                         "sass-loader",
-                        "style-loader"
                     ]
                 },
                 {
