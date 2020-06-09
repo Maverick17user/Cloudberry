@@ -1,5 +1,5 @@
 # Cloudberry
-![](./src/resources/images/fc1TBCdcUtY.jpg.jpg) 
+![](./src/resources/images/fc1TBCdcUtY.jpg) 
 
 #### Project for desktop apps using [Electron](https://electronjs.org/), [React](https://reactjs.org/) and [Typescript](https://www.typescriptlang.org/).
 
